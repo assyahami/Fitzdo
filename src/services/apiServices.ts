@@ -9,7 +9,7 @@ import type {
 
 
 const client: AxiosInstance = axios.create({
-    baseURL: "http://localhost:3021/api/v1",
+    baseURL: "https://fitzdo-server.onrender.com/api/v1",
     responseType: "json",
     // timeout: 30000,
 });
