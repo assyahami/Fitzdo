@@ -1,34 +1,53 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "../pages/Login";
-import RegisterPage from "../pages/Register";
-import ErrorPage from "../pages/ErrorPage";
-import ProductListingPage from "../pages/ProductListing";
-import ProductDetailPage from "../pages/ProductDetailsPage";
+import { lazy, Suspense } from "react";
+import LazyLoader from "@/components/LazyLoader";
+
+const LoginPage = lazy(() => import("../pages/Login"));
+const RegisterPage = lazy(() => import("../pages/Register"));
+const ProductListingPage = lazy(() => import("../pages/ProductListing"));
+const ProductDetailPage = lazy(() => import("../pages/ProductDetailsPage"));
+const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 
 const Router = createBrowserRouter([
-
     {
         path: "/",
-        element: <LoginPage />,
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <LoginPage />
+            </Suspense>
+        ),
     },
     {
         path: "/register",
-        element: <RegisterPage />,
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <RegisterPage />
+            </Suspense>
+        ),
     },
-
-
     {
         path: "/products",
-        element: <ProductListingPage />,
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <ProductListingPage />
+            </Suspense>
+        ),
     },
     {
         path: "/product/:id",
-        element: <ProductDetailPage />,
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <ProductDetailPage />
+            </Suspense>
+        ),
     },
-
     {
         path: "*",
-        element: <ErrorPage />,
+        element: (
+            <Suspense fallback={<LazyLoader />}>
+                <ErrorPage />
+            </Suspense>
+        ),
     },
 ]);
 
