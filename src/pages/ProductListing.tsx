@@ -1,27 +1,16 @@
-import { ProductCard } from "@/components/ProductCard";
+import { ProductCard, type ProductCardProps } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import Layout from "@/layout/Layout";
 import { APIRequest } from "@/services/apiServices";
 import { useEffect, useState } from "react";
 
-interface Products {
-    _id: string;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
-    category: string;
-    rating: {
-        rate: number;
-        count: number;
-    };
-}
+
 
 interface ProductsResponse {
     status: boolean;
     data: {
-        data: Products[];
+        data: ProductCardProps[];
         total: number;
 
     };
@@ -29,7 +18,7 @@ interface ProductsResponse {
 function ProductListingPage() {
     const [page, setPage] = useState(0);
     const [loading, setLoading] = useState(false);
-    const [products, setProducts] = useState<Products[]>([]);
+    const [products, setProducts] = useState<ProductCardProps[]>([]);
     const [total, setTotal] = useState(0);
 
 
@@ -71,11 +60,10 @@ function ProductListingPage() {
                     <Spinner fontSize={28} />
                     Loading Products!...
                 </div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {products.map((product) => (
+                    {products.map((product: ProductCardProps) => (
                         <ProductCard
                             key={product._id}
                             {...product}
-                            image={product.thumbnail}
                         />
                     ))}
 

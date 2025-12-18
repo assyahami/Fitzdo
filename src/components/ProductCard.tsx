@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge"
 import { useNavigate } from "react-router"
 import { formatPrice } from "@/utils"
 
-interface ProductCardProps {
+export interface ProductCardProps {
     _id: string
-    image: string
+    thumbnail: string
     brand: string
     title: string
     rating: number
@@ -21,7 +21,7 @@ interface ProductCardProps {
 
 export function ProductCard({
     _id,
-    image,
+    thumbnail,
     brand,
     title,
     rating,
@@ -42,7 +42,7 @@ export function ProductCard({
         }}>
             <div className="relative bg-white">
                 <img
-                    src={image || "/placeholder.svg"}
+                    src={thumbnail || "/placeholder.svg"}
                     alt={title}
                     className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
