@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+============================================================START=======================================================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fitzdo – FRONTEND E-Commerce Application
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://fitzdo.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Fitzdo Frontend is a modern e-commerce web application built using React and TypeScript.
+It focuses on clean UI, smooth navigation, and seamless integration with backend APIs.
+This project represents a real-world frontend setup following scalable and maintainable practices.
 
-## React Compiler
+====================================================Project Overview========================================================
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This application allows users to:
 
-## Expanding the ESLint configuration
+1: Register
+2: Login
+3: Browse products
+4: View product details
+5: Navigate between pages smoothly
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The frontend consumes REST APIs from the Fitzdo backend and handles all UI, routing,
+state handling, and user interaction logic.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+====================================================Tech Stack=============================================================
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Frontend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React (Vite)
+TypeScript
+React Router DOM
+Axios
+Tailwind CSS
+Radix UI Components
+Sonner (Toast Notifications)
+Lucide Icons
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+====================================================Features==============================================================
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+User Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Product listing with pagination
+Product detail page with image preview
+Authentication-based navigation
+Responsive design for mobile & desktop
+Clean and minimal UI
+Reusable components
+Fast performance with Vite
+
+==================================================Development Setup=======================================================
+
+Open Terminal
+
+git clone https://github.com/assyahami/fitzdo.git
+cd fitzdo
+npm install
+npm run dev
+
+The application will run locally on:
+
+http://localhost:5173
+
+(Port may vary based on availability)
+
+====================================================Notes===============================================================
+
+- This frontend is tightly integrated with the Fitzdo backend APIs
+- Authentication is handled using token-based logic
+- Tailwind CSS is used for all styling
+- The project is kept simple without over-engineering
+
+====================================================Future Improvements==================================================
+
+Wishlist feature
+Cart and checkout flow
+Role-based access
+Improved error handling
+UI animations and transitions
+
+-------------------------------------------------------------END-------------------------------------------------------------
